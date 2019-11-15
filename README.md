@@ -1,3 +1,7 @@
-# git_t
-txt
-i am iseuwei from ubuntu
+{
+"imageDir": "D:/in",
+"imageExt": ".jpg",
+"imgTail": "",
+"strRotate": "_R90",
+"strTranspose": "_RIGHT"
+}
