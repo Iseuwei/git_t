@@ -1,7 +1,5 @@
 {
-"imageDir": "D:/in",
-"imageExt": ".jpg",
-"imgTail": "",
-"strRotate": "_R90",
-"strTranspose": "_RIGHT"
+'X-Authentication': '5YnSOrLuOqcQghkEUjdAxJaUuVKb1gIrTT/Iqn5RzDs=',
+'X-Application': 'P9953AxonCGaTooo',
+'Accept': 'application/json',
 }
