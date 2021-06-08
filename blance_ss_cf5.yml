@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - name: cloud_ss_switch_ip
+  - name: ss_pigms_ac
     type: ss
     server: 104.16.154.137
     port: 443
@@ -14,12 +14,12 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: long-glitter-9e44.iseuwei.workers.dev
+      host: pigms_ac.makelove.workers.dev
       tls: true
       skip-cert-verify: false
       path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
       mux: true
-  - name: cloud_ss_peppeA
+  - name: ss_pigms_bd
     type: ss
     server: 104.18.7.166
     port: 443
@@ -28,12 +28,12 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: solitary-rain-3031.iseuwei.workers.dev
+      host: pigms_bd.makelove.workers.dev
       tls: true
       skip-cert-verify: false
       path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
       mux: true
-  - name: cloud_ss_peppaB
+  - name: ss_pigms_abcd
     type: ss
     server: 104.22.29.166
     port: 443
@@ -42,12 +42,40 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: long-cake-54a6.iseuwei.workers.dev
+      host: pigms_abcd.makelove.workers.dev
       tls: true
       skip-cert-verify: false
       path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
       mux: true
-  - name: cloud_ss_georgeA
+  - name: ss_pigsm_ac
+    type: ss
+    server: 104.16.154.137
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 28c17868-6cc0-4525-bfc4-e0ecf7db5971
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: pigsm_ac.makelove.workers.dev
+      tls: true
+      skip-cert-verify: false
+      path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
+      mux: true
+  - name: ss_pigsm_bd
+    type: ss
+    server: 104.18.7.166
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 28c17868-6cc0-4525-bfc4-e0ecf7db5971
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: pigsm_bd.makelove.workers.dev
+      tls: true
+      skip-cert-verify: false
+      path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
+      mux: true
+  - name: ss_pigsm_abcd
     type: ss
     server: 104.17.132.133
     port: 443
@@ -56,12 +84,12 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: muddy-sun-5e7a.iseuwei.workers.dev
+      host: pigsm_abcd.makelove.workers.dev
       tls: true
       skip-cert-verify: false
       path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
       mux: true
-  - name: cloud_ss_georgeB
+  - name: ss_switch_ip
     type: ss
     server: 104.16.165.136
     port: 443
@@ -70,7 +98,7 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
-      host: snowy-meadow-0768.iseuwei.workers.dev
+      host: pigms_switch_ip.makelove.workers.dev
       tls: true
       skip-cert-verify: false
       path: /28c17868-6cc0-4525-bfc4-e0ecf7db5971-ss
@@ -82,30 +110,36 @@ proxy-groups:
       - ♻️ 自动选择
       - ♻️ 负载均衡
       - DIRECT
-      - cloud_ss_switch_ip
-      - cloud_ss_peppeA
-      - cloud_ss_peppaB
-      - cloud_ss_georgeA
-      - cloud_ss_georgeB
+      - ss_pigms_ac
+      - ss_pigms_bd
+      - ss_pigms_abcd
+      - ss_pigsm_ac
+      - ss_pigsm_bd
+      - ss_pigsm_abcd
+      - ss_switch_ip
     _index: 0
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 120
     proxies:
-      - cloud_ss_switch_ip
-      - cloud_ss_peppeA
-      - cloud_ss_peppaB
-      - cloud_ss_georgeA
-      - cloud_ss_georgeB
+      - ss_pigms_ac
+      - ss_pigms_bd
+      - ss_pigms_abcd
+      - ss_pigsm_ac
+      - ss_pigsm_bd
+      - ss_pigsm_abcd
+      - ss_switch_ip
     _index: 1
   - name: ♻️ 负载均衡
     proxies:
-      - cloud_ss_switch_ip
-      - cloud_ss_peppeA
-      - cloud_ss_peppaB
-      - cloud_ss_georgeA
-      - cloud_ss_georgeB
+      - ss_pigms_ac
+      - ss_pigms_bd
+      - ss_pigms_abcd
+      - ss_pigsm_ac
+      - ss_pigsm_bd
+      - ss_pigsm_abcd
+      - ss_switch_ip
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 60
